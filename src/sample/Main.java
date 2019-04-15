@@ -17,9 +17,8 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
         loader.setController(new Controller(model));
         Parent root = loader.load();
-
         primaryStage.setTitle("Korisnici");
-        primaryStage.setScene(new Scene(root));
+        primaryStage.setScene(new Scene(root,500,500));
         primaryStage.show();
     }
 

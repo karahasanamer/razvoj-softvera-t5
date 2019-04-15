@@ -5,19 +5,25 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class Controller {
-    public ListView LIspis;
+
+    public ListView<Korisnik> LIspis;
     public TextField tfIme;
     public TextField tfPrezime;
     public TextField tfMail;
     public TextField tfKorsIme;
     public TextField tfLozinka;
+    public Button dodaj;
+    public Button kraj;
     private KorisniciModel model;
-    public ListView<Korisnik> lista;
+
+
+
     @FXML
     public void kraj(ActionEvent actionEvent) {
         Node n = (Node) actionEvent.getSource();
@@ -29,9 +35,9 @@ public class Controller {
 
         model.dodajKorisnika();
         setTextPropetryUnBind();
-        lista.refresh();
-        lista.requestFocus();
-        lista.getSelectionModel().selectLast();
+        LIspis.refresh();
+        LIspis.requestFocus();
+        LIspis.getSelectionModel().selectLast();
     }
 
     public Controller(KorisniciModel m) {
@@ -40,14 +46,14 @@ public class Controller {
 
     @FXML
     public void initialize(){
-        lista.requestFocus();
+        LIspis.requestFocus();
         model.setTrenutniKorisnik(model.getKorisnik().get(0));
         setTextPropetryBind();
-        lista.setItems(model.getKorisnik());
-        lista.getFocusModel().focus(0);
+        LIspis.setItems(model.getKorisnik());
+        LIspis.getFocusModel().focus(0);
         setTextPropetryUnBind();
 
-        lista.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Korisnik>() {
+        LIspis.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Korisnik>() {
             @Override
             public void changed(ObservableValue<? extends Korisnik> observableValue, Korisnik korisnikOld, Korisnik korisnikNew) {
                 if (korisnikOld != null) {
@@ -63,18 +69,18 @@ public class Controller {
                 else {
                     updateKorisnika();
                 }
-                lista.refresh();
+                LIspis.refresh();
             }
 
         });
     }
 
     private void updateKorisnika() {
-        Korisnik korisnik = (Korisnik) lista.getSelectionModel().getSelectedItem();
+        Korisnik korisnik = (Korisnik) LIspis.getSelectionModel().getSelectedItem();
         setTextPropetryUnBind();
         model.setTrenutniKorisnik(korisnik);
         setTextPropetryBind();
-        lista.refresh();
+        LIspis.refresh();
     }
 
     private void setTextPropetryBind() {

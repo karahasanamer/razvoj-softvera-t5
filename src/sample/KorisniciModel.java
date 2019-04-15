@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+
 public class KorisniciModel {
 
     private ObservableList<Korisnik> korisnik = FXCollections.observableArrayList();
@@ -36,8 +37,8 @@ public class KorisniciModel {
 
     void napuni (){
         korisnik.add(new Korisnik( "Vedran" , "Ljubovic" , " vljubovic1@etf.unsa.ba" , "vljubovic1", "password"));
-        korisnik.add(new Korisnik( "Tarik" , "Sijarcic" , " tsijarcic1@etf.unsa.ba" , "tare", "passw"));
-        korisnik.add(new Korisnik( "Harun" , "Hadzic" , " hhadzic3@etf.unsa.ba" , "hara", "harun(java)"));
+        korisnik.add(new Korisnik( "Tarik" , "Sijarcic" , " tsijarcic1@etf.unsa.ba" , "tsijarcic", "passw"));
+        korisnik.add(new Korisnik( "Amer" , "Karahasan" , " akarahasan4@etf.unsa.ba" , "akarahasan", "sifra)"));
         korisnik.add(new Korisnik());
     }
 
