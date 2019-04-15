@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="268.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="268.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="257.0" minWidth="10.0" prefWidth="257.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="130.0" />
@@ -19,7 +19,7 @@
     <RowConstraints maxHeight="232.0" minHeight="10.0" prefHeight="206.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <ListView prefHeight="160.0" prefWidth="300.0">
+      <ListView fx:id="LIspis" prefHeight="160.0" prefWidth="300.0">
          <GridPane.margin>
             <Insets top="10.0" />
          </GridPane.margin></ListView>
@@ -62,7 +62,7 @@
             <Insets top="150.0" />
          </GridPane.margin>
       </Label>
-      <TextField prefHeight="22.0" prefWidth="238.0" GridPane.columnIndex="2">
+      <TextField fx:id="tfIme" prefHeight="22.0" prefWidth="238.0" GridPane.columnIndex="2">
          <GridPane.margin>
             <Insets bottom="180.0" />
          </GridPane.margin>
@@ -70,32 +70,32 @@
             <Insets bottom="10.0" />
          </padding>
       </TextField>
-      <TextField layoutX="423.0" layoutY="28.0" GridPane.columnIndex="2">
+      <TextField fx:id="tfPrezime" layoutX="423.0" layoutY="28.0" GridPane.columnIndex="2">
          <GridPane.margin>
             <Insets bottom="100.0" />
          </GridPane.margin>
       </TextField>
-      <TextField layoutX="423.0" layoutY="61.0" GridPane.columnIndex="2">
+      <TextField fx:id="tfMail" layoutX="423.0" layoutY="61.0" GridPane.columnIndex="2">
          <GridPane.margin>
             <Insets bottom="20.0" />
          </GridPane.margin>
       </TextField>
-      <TextField layoutX="423.0" layoutY="101.0" GridPane.columnIndex="2">
+      <TextField fx:id="tfKorsIme" layoutX="423.0" layoutY="101.0" GridPane.columnIndex="2">
          <GridPane.margin>
             <Insets top="65.0" />
          </GridPane.margin>
       </TextField>
-      <TextField layoutX="423.0" layoutY="143.0" GridPane.columnIndex="2">
+      <TextField fx:id="tfLozinka" layoutX="423.0" layoutY="143.0" GridPane.columnIndex="2">
          <GridPane.margin>
             <Insets top="150.0" />
          </GridPane.margin>
       </TextField>
-      <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="88.0" text="Dodaj" GridPane.columnIndex="2">
+      <Button mnemonicParsing="false" onAction="#dodaj" prefHeight="31.0" prefWidth="88.0" text="Dodaj" GridPane.columnIndex="2">
          <GridPane.margin>
             <Insets top="240.0" />
          </GridPane.margin>
       </Button>
-      <Button layoutX="423.0" layoutY="231.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="90.0" text="Kraj" GridPane.columnIndex="2">
+      <Button layoutX="423.0" layoutY="231.0" mnemonicParsing="false" onAction="#kraj" prefHeight="31.0" prefWidth="90.0" text="Kraj" GridPane.columnIndex="2">
          <GridPane.margin>
             <Insets left="100.0" top="240.0" />
          </GridPane.margin>
